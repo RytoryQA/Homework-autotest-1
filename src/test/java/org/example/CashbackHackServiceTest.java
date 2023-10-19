@@ -1,8 +1,8 @@
 package org.example;
 
-import org.testng.Assert;
-import org.testng.annotations.Test;
 
+import org.junit.Assert;
+import org.junit.Test;
 
 public class CashbackHackServiceTest {
     CashbackHackService service = new CashbackHackService();
@@ -12,33 +12,33 @@ public class CashbackHackServiceTest {
 
     public void remainIfLessBoundary() {
 
-        Assert.assertEquals(service.remain(900), 100);
+        Assert.assertEquals(100, service.remain(900));
     }
 
     @Test
 
     public void remainIfMoreBoundary() {
 
-        Assert.assertEquals(service.remain(1800), 200);
+        Assert.assertEquals(200, service.remain(1800));
     }
 
     @Test
 
     public void remainIfEqualBoundary() {
 
-        Assert.assertEquals(service.remain(1_000), 0);
+        Assert.assertEquals(0, service.remain(1_000));
     }
 
     @Test
     public void remainIfMultiplyThreeBoundary() {
 
-        Assert.assertEquals(service.remain(3_000), 0);
+        Assert.assertEquals(0, service.remain(3_000));
     }
 
     @Test
     public void remainIfAmountNull() {
 
-        Assert.assertEquals(service.remain(0), 1_000);
+        Assert.assertEquals(1_000, service.remain(0));
 
     }
 
